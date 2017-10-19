@@ -17,7 +17,7 @@ Input - File with the following structure
 Output - * Abort and inform if it's not an Eulerian Graph
          * The final Eulerian path
          
-Contribuitors: Victor Medeiros(@medeirosvictor)
+Contribuitors: Victor Medeiros(@medeirosvictor), Diogo Lopes (@cirddan)
 Later on this repository will have more implementations regarding Graph Theory.
 Useful references to best practices when developing in Python:
 http://docs.python-guide.org/en/latest/writing/structure/
