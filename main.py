@@ -1,1 +1,5 @@
-print("This an implemention of a slightly modified version of Hierholzer's Alrogithm")
+from functions import read_input
+
+if __name__ == '__main__':
+    read_input.read_input()
+    print('Reading sample file...')
