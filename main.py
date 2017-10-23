@@ -1,5 +1,5 @@
-from functions import read_input
+from functions import read_input as reader
 
 if __name__ == '__main__':
-    read_input.read_input()
+    graph_size, adj_matrix, adj_list = reader.read_input()
     print('Reading sample file...')

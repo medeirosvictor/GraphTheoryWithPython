@@ -12,4 +12,5 @@ def read_input():
         for line in sample_file:
             matrix_row = list(map(int, line.split()))
             adj_matrix.append(matrix_row)
+
     return graph_size, adj_matrix
