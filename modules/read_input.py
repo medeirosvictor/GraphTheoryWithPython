@@ -4,7 +4,8 @@ def read_file():
     import os
 
     option = input('1. Use default test file\n2. Use custom test file...\n')
-    if option == '1':
+    #when os windows change to '1'
+    if option == 1:
         file_path = os.path.join(os.path.dirname(__file__), '..', 'sample', 'input.txt')
     else:
         file_path = input('Enter path to file...\n')
