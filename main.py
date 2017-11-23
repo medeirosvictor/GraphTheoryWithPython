@@ -16,6 +16,7 @@ def main():
     odd_vertex = is_semi_eulerian_graph(graph)
     start_vertex = 0 if odd_vertex is None else odd_vertex[0]
     print("Euler Tour: ", hierholzer(graph, start_vertex))
+    input("prompt: ")
 
 if __name__ == '__main__':
     main()
