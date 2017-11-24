@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from modules import read_file
 from modules import converter
 from modules import dfs
@@ -13,10 +14,8 @@ def main():
     graph = converter.matrix_to_list(adj_matrix)
     is_connected(graph)
     is_eulerian_graph(graph)
-    odd_vertex = is_semi_eulerian_graph(graph)
-    start_vertex = 0 if odd_vertex is None else odd_vertex[0]
-    print("Euler Tour: ", hierholzer(graph, start_vertex))
-    input("prompt: ")
+    print("Euler Tour: ", hierholzer(graph, 0))
+    raw_input("prompt: ")
 
 if __name__ == '__main__':
     main()
