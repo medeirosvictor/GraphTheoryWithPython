@@ -11,8 +11,3 @@ def matrix_to_list(adj_matrix):
                 adj_list[i] = node_adj
 
     return adj_list
-
-def list_to_path(trail):
-    path = list(trail.keys())
-    path.append(next(reversed(OrderedDict(trail).values())))
-    return path
