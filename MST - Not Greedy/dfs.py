@@ -1,14 +1,20 @@
 #!/usr/bin/python
 
 
-def dfs_cycle(graph, node, start_node, sub_tour, visited):
-    """Modified DFS to get cycles"""
+def dfs_cycle(mst, start):
+    edges = []
+    colors = {node: "WHITE" for node in mst}
+    colors[start] = "GRAY"
+    stack = [(None, start)]
+    while stack:
+        (prev, node) = stack.pop()
+        for neighbor in mst[node]:
+            if neighbor == prev:
+                pass
+            elif colors[neighbor] == "GRAY":
 
-    for node_adj in graph[node]:
-        if (node_adj, node) or (node, node_adj) not in visited:
-            visited[(node_adj, node)] = visited[(node, node_adj)] = True
-            sub_tour.append(node_adj)
-            if node == start_node:
-                return
-        else:
-            dfs_cycle(graph, node_adj, start_node, sub_tour, visited)
+                return True
+            else:
+                colors[neighbor] = "GRAY"
+                stack.append((node, neighbor))
+    return False

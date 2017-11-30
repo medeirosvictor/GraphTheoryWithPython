@@ -7,7 +7,7 @@ def read_file():
     import os
     import glob
 
-    print('Reading input test file inside sample directory')
+    print('Reading input test file inside test/ directory...')
     file_path = glob.glob("test/*.txt")
     file1 = file_path[0]
 

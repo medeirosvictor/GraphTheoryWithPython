@@ -2,3 +2,4 @@
 modules/__pycache__/
 .vscode/
 modules/*.pyc
+*.pyc
