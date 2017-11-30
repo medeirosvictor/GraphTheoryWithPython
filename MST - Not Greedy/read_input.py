@@ -4,7 +4,6 @@
 def read_file():
 
     """Reads input from .txt file and returns graph_size, adj_matrix and adj_list"""
-    import os
     import glob
 
     print('Reading input test file inside test/ directory...')
