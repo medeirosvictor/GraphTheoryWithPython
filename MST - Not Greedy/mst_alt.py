@@ -3,6 +3,4 @@
 
 def mst_alt(graph):
     mst = []
-    for edge in graph
-
-    return
+    return mst
