@@ -1,24 +1,36 @@
 #!/usr/bin/python
-from dfs import dfs_cycle
-import operator
-from graph import Graph
+from dfs import dfs_get_cycle
 
 def mst_alt(graph, edges_weights):
     temp_tree = {k: [] for k in graph}
     mst = {}
-    print("Edge weights: ", edges_weights)
+
+    #Para cada aresta no conjunto de arestas
     for edge in edges_weights:
-        print("Inserted edge: ", edge)
+
+        #Adiciona arbitrariamente uma aresta
+        print"Aresta inserida: ", edge, "Peso: ", edges_weights[edge]
         mst[edge] = edges_weights[edge]
         temp_tree[edge[0]].append(edge[1])
         temp_tree[edge[1]].append(edge[0])
-        if dfs_cycle(temp_tree, 0):
-            max_key = max(mst.items(), key=operator.itemgetter(1))[0]
-            print("Removed edge: ", max_key)
-            temp_tree[max_key[0]].remove(max_key[1])
-            temp_tree[max_key[1]].remove(max_key[0])
-            mst.pop(max_key)
-        print("Partial MST: ", mst)
-    print("Final MST: ", mst)
-    print("Peso total da MST obtida: ", sum(mst.values()))
+
+        #Verifica se apos a adicao foi gerado um ciclo na solucao parcial
+        cycle = dfs_get_cycle(mst)
+        if cycle:
+            print"ciclo encontrado", cycle
+            #Se existe um ciclo, remove a aresta de maior peso pertencente ao ciclo
+            heaviest = cycle[0]
+            for x in cycle:
+                if edges_weights[heaviest] < edges_weights[x]:
+                    heaviest = x
+            temp_tree[heaviest[0]].remove(heaviest[1])
+            temp_tree[heaviest[1]].remove(heaviest[0])
+            mst.pop(heaviest)
+            print"Aresta removida: ", heaviest, "Peso: ", edges_weights[heaviest]
+        print"Solucao parcial MST: ", mst
+        print
+
+    #Resultado final
+    print"Solucao final MST: ", mst
+    print"Peso total da MST obtida: ", sum(mst.values())
     return mst

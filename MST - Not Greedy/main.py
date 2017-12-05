@@ -2,8 +2,7 @@
 
 from read_input import read_file
 from converter import matrix_to_list
-from MST_ALT import mst_alt
-from graph import Graph
+from mst_alt import mst_alt
 
 
 def main():

@@ -1,7 +1,16 @@
 6
+<<<<<<< HEAD
 0 1 1 1 inf inf
 1 0 1 inf 1 inf
 1 1 0 1 1 1
 1 inf 1 0 inf 1
 inf 1 1 inf 0 1
 inf inf 1 1 1 0
+=======
+0 5 3 inf inf inf
+5 0 2 inf inf inf
+3 2 0 inf inf inf
+inf inf inf 0 7 inf
+inf inf inf 7 0 2
+inf inf inf inf 2 0
+>>>>>>> 20ec5f90651df33bbe7647f974130df44656b6b8
